@@ -6,6 +6,11 @@ author:              "Valerii Lysenko"
 maintainer:          "vallyscode@gmail.com"
 copyright:           "2019 Valerii Lysenko"
 
+data-files:
+- resources/dino.png
+- resources/tileset.png
+- resources/Gladiator-Sprite Sheet.png
+
 extra-source-files:
 - README.md
 - ChangeLog.md
@@ -17,11 +22,36 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+  - text
+  - mtl
+  - sdl2
+  - sdl2-image
+  - sdl2-ttf
+  - sdl2-mixer
 
 executables:
-  animation-exe:
+  ex-01:
     main:                Main.hs
-    source-dirs:         app
+    source-dirs:         ex-01
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - animation
+  ex-02:
+    main:                Main.hs
+    source-dirs:         ex-02
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - animation
+  ex-03:
+    main:                Main.hs
+    source-dirs:         ex-03
     ghc-options:
     - -threaded
     - -rtsopts
